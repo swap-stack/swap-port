@@ -57,6 +57,32 @@
         <p>&copy; 2023 Swapnila Kavishwar</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        (function($) {
+    var s,
+    spanizeLetters = {
+      settings: {
+        letters: $('.js-spanize'),
+      },
+      init: function() {
+        s = this.settings;
+        this.bindEvents();
+      },
+      bindEvents: function(){
+        s.letters.html(function (i, el) {
+          //spanizeLetters.joinChars();
+          var spanizer = $.trim(el).split("");
+          return '<span>' + spanizer.join('</span><span>') + '</span>';
+        });
+      },
+    };
+    spanizeLetters.init();
+  })(jQuery);
+    </script>
+
+
+
+
     <script src="scripts.js"></script>
 </body>
 </html>
